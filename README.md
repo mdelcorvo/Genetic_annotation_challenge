@@ -15,9 +15,20 @@ To install conda: https://docs.conda.io/projects/conda/en/latest/user-guide/inst
 
 To install Snakemake via conda: conda install -c conda-forge -c bioconda snakemake snakemake-wrapper-utils mamba
 ```
-To use the pipeline:
 
-git clone https://github.com/mdelcorvo/TOSCA.git
+To use this tool, you will need to do the following steps:
+
+1. git clone https://github.com/mdelcorvo/Genetic_annotation_challenge.git
+2. Download your ‘raw data’ from the 23andme site and put it in data directory
+3. Download the 1000 Genomes reference data, which can be found on the impute2 website here:
+https://mathgen.stats.ox.ac.uk/impute/data_download_1000G_phase1_integrated.html
+4.Extract this data by running:
+gunzip ALL_1000G_phase1integrated_v3_impute.tgz
+tar xf ALL_1000G_phase1integrated_v3_impute.tar
+
 #edit config
+
+ 
+ 
 cd Genetic_annotation_challenge && snakemake --use-conda -n 4
 ```
