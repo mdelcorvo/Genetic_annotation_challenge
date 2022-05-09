@@ -28,7 +28,7 @@ https://mathgen.stats.ox.ac.uk/impute/data_download_1000G_phase1_integrated.html
 gunzip ALL_1000G_phase1integrated_v3_impute.tgz
 tar xf ALL_1000G_phase1integrated_v3_impute.tar
 
-#edit config
+5.Edit config by setting correct paths
 
-cd Genetic_annotation_challenge && snakemake --use-conda -n 4
+6. cd Genetic_annotation_challenge && snakemake --use-conda -n 4
 ```
