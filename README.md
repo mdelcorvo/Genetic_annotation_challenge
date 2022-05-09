@@ -27,8 +27,9 @@ https://mathgen.stats.ox.ac.uk/impute/data_download_1000G_phase1_integrated.html
 4.Extract this data by running:
 gunzip ALL_1000G_phase1integrated_v3_impute.tgz
 tar xf ALL_1000G_phase1integrated_v3_impute.tar
+and put them in resources\ReferencePanel directory
 
-5.Edit config by setting correct paths
+5.Edit config file by setting correct paths
 
 6. cd Genetic_annotation_challenge && snakemake --use-conda -n 4
 ```
