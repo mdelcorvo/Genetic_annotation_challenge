@@ -29,7 +29,13 @@ gunzip ALL_1000G_phase1integrated_v3_impute.tgz
 tar xf ALL_1000G_phase1integrated_v3_impute.tar
 and put them in resources\ReferencePanel directory
 
-5.Edit config file by setting correct paths
+5. Download Clinvar, Cosmic and GWAS database from the following link:
+Cosmic: "http://ftp.ensembl.org/pub/grch37/current/variation/vcf/homo_sapiens/homo_sapiens_somatic.vcf.gz"
+ClinVar: "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh37/clinvar.vcf.gz"
+GWAS: "https://www.ebi.ac.uk/gwas/api/search/downloads/full"
+and put them in resources\database directory (or change the default directory in config file)
 
-6. cd Genetic_annotation_challenge && snakemake --use-conda -n 4
+6.Edit config file by setting correct paths
+
+7. cd Genetic_annotation_challenge && snakemake --use-conda -n 4
 ```
