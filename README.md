@@ -14,7 +14,7 @@ https://mdelcorvo.shinyapps.io/challenge
 2. Create a Nextlfow/CWL/WDL pipeline
 
 ## Workflow
-## Using the Snakemake pipeline
+# Using the Snakemake pipeline
 
 We assume that you already have conda and Snakemake installed, otherwise you can easily install them with the following commands:
 
