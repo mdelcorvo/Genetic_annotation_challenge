@@ -27,7 +27,7 @@ https://mathgen.stats.ox.ac.uk/impute/data_download_1000G_phase1_integrated.html
 4.Extract this data by running:
 gunzip ALL_1000G_phase1integrated_v3_impute.tgz
 tar xf ALL_1000G_phase1integrated_v3_impute.tar
-and put them in resources\ReferencePanel directory
+and put them in resources\ReferencePanel directory (or change the default directory in config file)
 
 5. Download Clinvar, Cosmic and GWAS database from the following link:
 Cosmic: "http://ftp.ensembl.org/pub/grch37/current/variation/vcf/homo_sapiens/homo_sapiens_somatic.vcf.gz"
