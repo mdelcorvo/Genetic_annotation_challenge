@@ -7,12 +7,11 @@
 
 ## Results
 
-```
+
 1. Create an interactive dashboard:
 
 https://mdelcorvo.shinyapps.io/challenge
 
-```
 
 ## Using the Snakemake pipeline
 
