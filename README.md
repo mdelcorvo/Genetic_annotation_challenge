@@ -10,7 +10,7 @@
 
 1. Create an interactive dashboard:
 
-https://mdelcorvo.shinyapps.io/challenge
+https://mdelcorvo.shinyapps.io/bioinfo_challenge/
 
 2. Create a Nextlfow/CWL/WDL pipeline
 
