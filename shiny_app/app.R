@@ -7,7 +7,7 @@ options(warn=-1)
 
 ###########################################
 # Lifebit Biotech Ltd - Coding Challenge  #
-# 2022 Marcello Del Corvo 				  #
+# 2022 Marcello Del Corvo 	          #
 ###########################################
 
 inactivity <- "function idleTimer() {
@@ -32,9 +32,9 @@ idleTimer();"
 #Load results from example dataset analysis (original / imputed data.frame)
 load('') # to edit
 load('') # to edit
-															         	##################
-																		# Shiny UI -------
-																		##################
+				    ##################
+				    # Shiny UI -------
+			            ##################
 ui <- secure_app(head_auth = tags$script(inactivity),fluidPage(
   theme = "bootstrap.css",
   includeCSS("www/styles.css"),
@@ -46,7 +46,7 @@ ui <- secure_app(head_auth = tags$script(inactivity),fluidPage(
 	   sidebarLayout(
 		   sidebarPanel(width = 2,               
 																			
-            conditionalPanel(                                             #Original data#										
+            conditionalPanel(         #Original data#										
                condition = "input.original == 1",	
                pickerInput(inputId = "myPicker_original", label = "Select/deselect fields", choices = colnames(original)[7:ncol(original)], selected=colnames(original)[c(8,9:11,15)],
 			   options = list(`actions-box` = TRUE,size = 10,`selected-text-format` = "count > 3"),multiple = TRUE),		
@@ -61,7 +61,7 @@ ui <- secure_app(head_auth = tags$script(inactivity),fluidPage(
                column(12,selectInput("context_original","Context:",c("All", unique(original$Context)))),
 			   downloadButton("downloadData_original", "Download"),),
 																	 											
-			conditionalPanel(            								 #Imputed data#    
+			conditionalPanel( #Imputed data#    
                condition = "input.original == 2",
                pickerInput(inputId = "myPicker_imputed", label = "Select/deselect fields", choices = colnames(imputed)[7:ncol(imputed)], selected=colnames(imputed)[c(8,9:11,15)],
 			   options = list(`actions-box` = TRUE,size = 10,`selected-text-format` = "count > 3"),multiple = TRUE),		
@@ -86,13 +86,13 @@ ui <- secure_app(head_auth = tags$script(inactivity),fluidPage(
 	mainPanel(  
 	width = 7,   
 	uiOutput("data"),))))
-																		###########################
-																		# Shiny Server Side -------
-																		###########################
+					     ###########################
+					     # Shiny Server Side -------
+					     ###########################
 																		
 server <- function(input, output, session) {
   result_auth <- secure_server(check_credentials = check_credentials(credentials))														
-  output$original <- DT::renderDataTable({ #pannello original
+  output$original <- DT::renderDataTable({ #original SNPS
 	data <- original
 	if (input$geno_original != "All") {data <- data[data$Genotype == input$geno_original,]}
     if (input$clinical_original != "All") {data <- data[grepl(input$clinical_original,data$ClinVar_Clinical_Sign,ignore.case=T),]}
@@ -112,11 +112,11 @@ server <- function(input, output, session) {
     filename = function() {if (nrow(data_original) <= 1000) {paste(input$dataset,"_Original_SNPs", ".xlsx", sep = "")} else {paste(input$dataset,"_Original_SNPs", ".txt", sep = "")}},
     content = function(file) {if (nrow(data_original) <= 1000) {write.xlsx(doriginal, file, col.names = TRUE, row.names = F, append = FALSE)} else {fwrite(doriginal,file, row.names=F, col.names=T,quote=F, sep='\t')}}
     ) 
-	##########   
+ 
     DT::datatable(data_original[, v1, drop = FALSE], options = list(orderClasses = TRUE,lengthMenu = c(25, 50, 100, 500)))
   })
   
-   output$imputed <- DT::renderDataTable({ #pannello imputed
+   output$imputed <- DT::renderDataTable({ #imputed SNPs
 	data <- imputed
 	if (input$geno_imputed != "All") {data <- data[data$Genotype == input$geno_imputed,]}
     if (input$clinical_imputed != "All") {data <- data[grepl(input$clinical_imputed,data$ClinVar_Clinical_Sign,ignore.case=T),]}
@@ -136,7 +136,7 @@ server <- function(input, output, session) {
     filename = function() {if (nrow(data_imputed) <= 1000) {paste(input$dataset,"_Imputed_SNPs", ".xlsx", sep = "")} else {paste(input$dataset,"_Imputed_SNPs", ".txt", sep = "")}},
     content = function(file) {if (nrow(data_imputed) <= 1000) {write.xlsx(dimputed, file, col.names = TRUE, row.names = F, append = FALSE)} else {fwrite(dimputed,file, row.names=F, col.names=T,quote=F, sep='\t')}}
     ) 
-	##########   
+  
     DT::datatable(data_imputed[, v1, drop = FALSE], options = list(orderClasses = TRUE,lengthMenu = c(25, 50, 100, 500)))
   })
 }
