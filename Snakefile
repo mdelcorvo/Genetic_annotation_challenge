@@ -48,7 +48,7 @@ rule plink2oxford:
     shell:
 	    "plink --bfile results/{params.name} --out results/{params.name}.{params.chr} --snps-only just-acgt --chr {params.chr} --export oxford; "
 
-# Chromosome X  
+# Chromosome X has been deactivated
 rule plink2oxfordX:
     input:
         gen= expand("results/{name}.{chr}.gen",name=NAME,chr=CHR),
@@ -73,8 +73,10 @@ rule impute:
         name= "{name}" 
     output:
         imputed= temp("results/{name}.{chr}.impute2")
+    conda:
+        "envs/impute2.yaml"
     shell:
-        "impute2 -m {input.map} -h {input.hap} -l {input.legend} -g {input.gen} -int 20.4e6 20.5e6 -Ne 20000 -k 100 -iter 500 -o {output.imputed};"
+        "impute2 -m {input.map} -h {input.hap} -l {input.legend} -g {input.gen} -int 20.4e6 20.5e6 -Ne 20000 -k 100 -iter 100 -o {output.imputed};"
 
 rule imputeX:
     input:
@@ -86,6 +88,8 @@ rule imputeX:
         name= "{name}"  
     output:
         imputedx= "results/{name}.23.impute2"
+    conda:
+        "envs/impute2.yaml"	
     shell:
         "impute2 -chrX -m {input.mapX} -h {input.hapX} -l {input.legendX} -g {input.genX} -int 20.4e6 20.5e6 -Ne 20000 -o {output.imputedx};"         
 
