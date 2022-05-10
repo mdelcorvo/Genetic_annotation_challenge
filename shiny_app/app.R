@@ -29,9 +29,9 @@ t = setTimeout(logout, 120000);  // time is in milliseconds (1000 is 1 second)
 }
 idleTimer();"
 
-#Load results from example dataset analysis
-load('original.rda')
-load('imputed.rda')
+#Load results from example dataset analysis (original / imputed data.frame)
+load('') # to edit
+load('') # to edit
 															         	##################
 																		# Shiny UI -------
 																		##################
@@ -141,10 +141,10 @@ server <- function(input, output, session) {
   })
 }
 
-# data.frame with credentials info
+# data.frame with credentials info (to edit)
 credentials <- data.frame(
-  user = c("DelCorvo"),
-  password = c("Lifebit_BioinfoChallenge"),
+  user = c(""),
+  password = c(""),
   stringsAsFactors = FALSE
 )
 
