@@ -56,7 +56,7 @@ between markers and condition.
 
 https://mdelcorvo.shinyapps.io/bioinfo_challenge/
 
-2. Create a Nextlfow/CWL/WDL pipeline
+2. Create a Nextlfow/CWL/WDL/Snakemake pipeline
 
 ## Using the Snakemake workflow
 
