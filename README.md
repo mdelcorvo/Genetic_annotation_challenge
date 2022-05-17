@@ -10,11 +10,9 @@ Input file is a tab separated file containing genotyping information of an indiv
 
 [Example genome file](https://gist.githubusercontent.com/pprieto/f3f75aed72e5b7f28728dbca03e6edde/raw/242e42954475f2876c2b425c901fdfa818089b33/example_genome.txt)
 
-Specifically, you can find a set of 577794 genotypes, that include the accession number of SNPs, its location information (chromosome, position), and the 
-corresponding genotype.
-
 This file contains information about the genotype at 638,488 positions in an individual’s genome. This kind of files are for 
-example produced by the 23andMe genotyping analysis and delivered to customers who use their service.
+example produced by the 23andMe genotyping analysis including the accession number of SNPs, its location information (chromosome, position), and the 
+corresponding genotype.
 
 Given this file with genotyping information the tasks are:
 
