@@ -5,10 +5,10 @@ library(xlsx)
 library(data.table)
 options(warn=-1)
 
-###########################################
-# Lifebit Biotech Ltd - Coding Challenge  #
-# 2022 Marcello Del Corvo 	          #
-###########################################
+############################
+# Coding Challenge  	   #
+# 2022 Marcello Del Corvo  #
+############################
 
 inactivity <- "function idleTimer() {
 var t = setTimeout(logout, 240000);
